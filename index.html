@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Enso Documentation Parser Demo</title>
+    <link rel="stylesheet" href="index.css"/>
+  </head>
+  <body>
+    <div style="text-align: center;">
+      <p>Enso Documentation Parser Demo</p>
+    </div>
+    <div style="text-align: center; display: flex;">
+      <div>
+      <div>
+        <p>Enso Code</p>
+        <textarea id="code" name="code" rows="20" cols="80">
+##
+  DEPRECATED
+  REMOVED - replaced by Foo Bar
+  ADDED
+  MODIFIED
+  UPCOMING
+  ALAMAKOTA a kot ma Ale
+  This is a test of Enso Documentation Parser. This is a short synopsis.
+
+  Here you can write the body of documentation. On top you can see tags
+  added to this piece of code. You can customise your text with _Italic_
+  ~Strikethrough~ or *Bold*. ~_*Combined*_~ is funny
+
+
+  There are 3 kinds of sections
+    - Important
+    - Info
+    - Example
+      * You can use example to add multiline code to your documentation
+
+  ! Important
+    Here is a small test of Important Section
+
+  ? Info
+    Here is a small test of Info Section
+
+  > Example
+    Here is a small test of Example Section
+        Import Foo
+        def Bar a
+type A
+  ##
+    ADDED
+    PUBLIC
+    Fooo
+    
+    > Example
+      Take this shit
+        And fdsfsdf 
+  type B
+  ##
+    PRIVATE
+    MODIFIED
+    Understandable
+  type C
+  ##
+    foo changes `x` and `y`
+  foo x y = B x + C y
+  foo x y = B x + C y
+  ##
+    foo changes `x` and `y`
+  foo x y = B x + C y
+        </textarea>
+      </div>
+      <button id="run">RUN</button>
+      <div>
+        <p>HTML Code</p>
+        <textarea id="codeGenerated" name="codeGenerated" rows="14" cols="80"></textarea>
+      </div>
+    </div>
+    <iframe id="frame" width="90%"" height="900px" style="margin-left: 10px;">
+    </iframe>
+  </div>
+
+    <!-- Include Scala.js compiled code -->
+    <script type="text/javascript">
+        var __ScalaJSEnv = { global: window };
+    </script>
+    <script type="text/javascript" src="syntax-fastopt.js"></script>
+    <script type="text/javascript">
+      const code = document.getElementById("code");
+      const codeGenerated = document.getElementById("codeGenerated");
+      const run = document.getElementById("run");
+      const frame = document.getElementById("frame");
+
+      run.addEventListener('click', _ => {
+        var cg = $e_doc_parser_generate_html_source(code.value);
+        codeGenerated.value = cg;
+        frame.contentWindow.document.open();
+        frame.contentWindow.document.write(cg);
+        frame.contentWindow.document.close();
+      });
+    </script>
+  </body>
+</html>
