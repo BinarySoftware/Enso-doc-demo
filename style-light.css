@@ -15,8 +15,7 @@ body {
   font-weight: 400;
   letter-spacing: -0.021em;
   font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  background-color: #2F2F29;
-  color: #FAFAFA;
+  color: #333333;
   margin: 0;
   padding: 0;
 }
@@ -30,12 +29,12 @@ body p {
 }
 
 body a:hover {
-  color: #438ac4 !important;
+  color: #0070c9 !important;
   text-decoration: inherit;
 }
 
 body a {
-  color: #FAFAFA;
+  color: #333333;
   background-color: transparent;
   text-decoration: inherit;
   display: inline-block;
@@ -47,7 +46,7 @@ body img {
 }
 
 body code {
-  color: #438ac4;
+  color: #0070c9;
   background-color: transparent;
   font-size: inherit;
   font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -62,8 +61,8 @@ body button {
   margin: 10px 0;
   outline: none;
   background-color: transparent;
-  border: 1px solid #e5e5e5;
-  color: #e5e5e5;
+  border: 1px solid #333333;
+  color: #333333;
   border-radius: 5px;
   font-size: 13px;
   vertical-align: top;
@@ -71,8 +70,8 @@ body button {
 }
 
 body button:hover {
-  background-color: #e5e5e5;
-  color: #333333;
+  background-color: #333333;
+  color: #e5e5e5;
 }
 
 body b {
@@ -158,27 +157,27 @@ body li {
   background: transparent;
 }
 .Tags .DEPRECATED {
-  border: 1px solid #df5555;
-  color: #df5555;
+  border: 1px solid #d20606;
+  color: #d20606;
 }
 .Tags .MODIFIED {
-  border: 1px solid #3e69c5;
-  color: #3e69c5;
+  border: 1px solid #003ec3;
+  color: #003ec3;
 }
 .Tags .ADDED {
-  border: 1px solid #90af52;
-  color: #90af52;
+  border: 1px solid #79A129;
+  color: #79A129;
 }
 .Tags .UPCOMING,
 .Tags .REMOVED,
 .Tags .UNRECOGNIZED {
-  border: 1px solid #acaaaa;
-  color: #acaaaa;
+  border: 1px solid #666666;
+  color: #666666;
 }
 
 .ExtForTagDetails {
   margin: 0 3px;
-  color: #c4c3c3;
+  color: #999999;
 }
 
 .Raw,
@@ -200,7 +199,7 @@ body li {
   font-weight: 400;
   letter-spacing: -0.021em;
   font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  color: #FAFAFA;
+  color: #333333;
   font-style: normal;
 }
 
@@ -216,19 +215,19 @@ body li {
 }
 
 .Important {
-  background-color: #8d8368;
+  background-color: #FBECC2;
 }
 
 .Info {
-  background-color: #5e7546;
+  background-color: #D6E1CA;
 }
 
 .Example {
-  background-color: #212121;
+  background-color: #fafafa;
 }
 
 .CodeBlock {
-  background-color: #2f2f2f;
+  background-color: #fefefe;
   margin: 10px 20px;
   display: none;
 }
@@ -254,7 +253,7 @@ body li {
   margin-bottom: 15px;
   font-size: 14px;
   font-weight: 400;
-  color: #FAFAFA;
+  color: #333333;
   font-style: normal;
 }
 .Def .constr {
