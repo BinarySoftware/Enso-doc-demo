@@ -47,7 +47,7 @@ body a {
 }
 
 .dark body a:hover {
-  color: #438ac4 !important;
+  color: #8dc9fa !important;
 }
 
 .dark body a {
@@ -69,7 +69,7 @@ body code {
 }
 
 .dark body code {
-  color: #438ac4;
+  color: #8dc9fa;
 }
 
 body button {
@@ -198,37 +198,39 @@ body li {
 .Tags .UPCOMING,
 .Tags .REMOVED,
 .Tags .UNRECOGNIZED {
-  border: 1px solid #666666;
-  color: #666666;
+  border: 1px solid #32302E;
+  color: #32302E;
 }
 
 .ExtForTagDetails {
   margin: 0 3px;
-  color: #999999;
-}
-
-.dark .Tags {
-  color: #fafafa;
+  color: #42403e;
 }
 
 .dark .Tags .DEPRECATED {
+  color: #fafafa;
   background-color: #df5555;
+  border: 0;
 }
 .dark .Tags .MODIFIED {
+  color: #fafafa;
   background-color: #3e69c5;
+  border: 0;
 }
 .dark .Tags .ADDED {
+  color: #fafafa;
   background-color: #90af52;
+  border: 0;
 }
 .dark .Tags .UPCOMING,
 .dark .Tags .REMOVED,
 .dark .Tags .UNRECOGNIZED {
-  background-color: #acaaaa;
+  color: #fafafa;
+  background-color: #42403e;
 }
 
 .dark .ExtForTagDetails {
   color: #c4c3c3;
-  background-color: #c4c3c3;
 }
 
 .Raw,
@@ -263,7 +265,7 @@ body li {
 .CodeBlock,
 .Example {
   font-size: 14px;
-  padding: 15px 10px 15px 20px;
+  padding: 15px 20px 10px 20px;
   border: 0;
   border-radius: 6px;
   margin: 0.7em 0;
@@ -283,12 +285,11 @@ body li {
 
 .CodeBlock {
   background-color: #fefefe;
-  margin: 10px 20px;
-  display: none;
+  margin: 10px 0px;
 }
 
-.dark.Important {
-  background-color: #8d8368;
+.dark .Important {
+  background-color: #464f75;
 }
 
 .dark .Info {
@@ -309,7 +310,7 @@ body li {
 
 .Def {
   margin: 20px auto auto;
-  padding: 0 5px;
+  padding: 0 15px;
   text-decoration: inherit;
 }
 
@@ -417,6 +418,11 @@ body li {
 .Documentation .ASTHead {
   margin: 20px auto 5px;
 }
+
+.dark .Documentation .ASTData{
+  background-color: #212121;
+}
+
 .Documentation .ASTHead .DefTitle {
   font-size: 34px;
   margin: 0;

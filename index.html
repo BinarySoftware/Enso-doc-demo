@@ -13,7 +13,7 @@
       <div>
       <div>
         <p>Enso Code</p>
-        <textarea id="code" name="code" rows="20" cols="80">
+        <textarea id="code" name="code" rows="30" cols="80">
 ##
   DEPRECATED
   REMOVED - replaced by Foo Bar
@@ -43,7 +43,7 @@
   > Example
     Here is a small test of Example Section
         Import Foo
-        def Bar a
+        def Bar a b = if a > b then Foo.baz a b else Foo.baz b a
 type A
   ##
     ADDED
@@ -51,7 +51,7 @@ type A
     Fooo
     
     > Example
-      Take this shit
+      Take this sfsfdsf
         And fdsfsdf 
   type B
   ##
@@ -68,10 +68,11 @@ type A
   foo x y = B x + C y
         </textarea>
       </div>
-      <button id="run">RUN</button>
+      <button id="run">Run light mode</button>
+      <button id="runDark">Run dark mode</button>
       <div>
-        <p>HTML Code</p>
-        <textarea id="codeGenerated" name="codeGenerated" rows="14" cols="80"></textarea>
+        <p>Generated HTML Code</p>
+        <textarea id="codeGenerated" name="codeGenerated" rows="20" cols="80"></textarea>
       </div>
     </div>
     <iframe id="frame" width="90%"" height="900px" style="margin-left: 10px;">
@@ -84,12 +85,22 @@ type A
     </script>
     <script type="text/javascript" src="scala-parser.js"></script>
     <script type="text/javascript">
-      const code = document.getElementById("code");
+      const code          = document.getElementById("code");
       const codeGenerated = document.getElementById("codeGenerated");
-      const run = document.getElementById("run");
-      const frame = document.getElementById("frame");
+      const run           = document.getElementById("run");
+      const runDark       = document.getElementById("runDark");
+      const frame         = document.getElementById("frame");
 
       run.addEventListener('click', _ => {
+        var cg = $e_doc_parser_generate_html_source(code.value);
+        codeGenerated.value = cg;
+        frame.contentWindow.document.open();
+        frame.contentWindow.document.write(`<link rel="stylesheet" href="style.css"/>`);
+        frame.contentWindow.document.write(cg);
+        frame.contentWindow.document.close();
+      });
+
+      runDark.addEventListener('click', _ => {
         var cg = $e_doc_parser_generate_html_source(code.value);
         cg = cg.replace("<html>",`<html class="dark">`);
         codeGenerated.value = cg;
