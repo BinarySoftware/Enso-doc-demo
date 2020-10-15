@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Enso Documentation Parser Demo</title>
-    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
     <div style="text-align: center;">
@@ -82,7 +82,7 @@ type A
     <script type="text/javascript">
         var __ScalaJSEnv = { global: window };
     </script>
-    <script type="text/javascript" src="syntax-fastopt.js"></script>
+    <script type="text/javascript" src="scala-parser.js"></script>
     <script type="text/javascript">
       const code = document.getElementById("code");
       const codeGenerated = document.getElementById("codeGenerated");
@@ -91,8 +91,10 @@ type A
 
       run.addEventListener('click', _ => {
         var cg = $e_doc_parser_generate_html_source(code.value);
+        cg = cg.replace("<html>",`<html class="dark">`);
         codeGenerated.value = cg;
         frame.contentWindow.document.open();
+        frame.contentWindow.document.write(`<link rel="stylesheet" href="style.css"/>`);
         frame.contentWindow.document.write(cg);
         frame.contentWindow.document.close();
       });
