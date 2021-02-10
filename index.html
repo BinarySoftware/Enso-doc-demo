@@ -153,7 +153,7 @@ type A
 
       runDark.addEventListener('click', _ => {
         var cg = $e_doc_parser_generate_html_source(code.value);
-        cg = cg.replace("<html>",`<html class="dark">`);
+        cg = cg.replace("<html>",`<html class="dark-theme">`);
         codeGenerated.value = cg;
         frame.contentWindow.document.open();
         frame.contentWindow.document.write(`<link rel="stylesheet" href="style.css"/>`);
@@ -172,7 +172,7 @@ type A
 
       runPureDark.addEventListener('click', _ => {
         var cg = $e_doc_parser_generate_html_from_doc(code.value);
-        cg = cg.replace("<html>",`<html class="dark">`);
+        cg = cg.replace("<html>",`<html class="dark-theme">`);
         codeGenerated.value = cg;
         frame.contentWindow.document.open();
         frame.contentWindow.document.write(`<link rel="stylesheet" href="style.css"/>`);
