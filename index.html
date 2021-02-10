@@ -115,8 +115,10 @@ type A
   foo x y = B x + C y
         </textarea>
       </div>
-      <button id="run">Run light mode</button>
-      <button id="runDark">Run dark mode</button>
+      <button id="run">Run light mode (AST)</button>
+      <button id="runDark">Run dark mode (AST)</button>
+      <button id="runPure">Run light mode (Pure)</button>
+      <button id="runPureDark">Run dark mode (Pure)</button>
       <div>
         <p>Generated HTML Code</p>
         <textarea id="codeGenerated" name="codeGenerated" rows="20" cols="80"></textarea>
@@ -136,6 +138,8 @@ type A
       const codeGenerated = document.getElementById("codeGenerated");
       const run           = document.getElementById("run");
       const runDark       = document.getElementById("runDark");
+      const runPure       = document.getElementById("runPure");
+      const runPureDark   = document.getElementById("runPureDark");
       const frame         = document.getElementById("frame");
 
       run.addEventListener('click', _ => {
@@ -149,6 +153,25 @@ type A
 
       runDark.addEventListener('click', _ => {
         var cg = $e_doc_parser_generate_html_source(code.value);
+        cg = cg.replace("<html>",`<html class="dark">`);
+        codeGenerated.value = cg;
+        frame.contentWindow.document.open();
+        frame.contentWindow.document.write(`<link rel="stylesheet" href="style.css"/>`);
+        frame.contentWindow.document.write(cg);
+        frame.contentWindow.document.close();
+      });
+
+      runPure.addEventListener('click', _ => {
+        var cg = $e_doc_parser_generate_html_from_doc(code.value);
+        codeGenerated.value = cg;
+        frame.contentWindow.document.open();
+        frame.contentWindow.document.write(`<link rel="stylesheet" href="style.css"/>`);
+        frame.contentWindow.document.write(cg);
+        frame.contentWindow.document.close();
+      });
+
+      runPureDark.addEventListener('click', _ => {
+        var cg = $e_doc_parser_generate_html_from_doc(code.value);
         cg = cg.replace("<html>",`<html class="dark">`);
         codeGenerated.value = cg;
         frame.contentWindow.document.open();
