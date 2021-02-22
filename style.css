@@ -130,6 +130,11 @@ body li {
   padding-left: 10px;
 }
 
+.Infix {
+  font-size: 24px;
+  margin: 0;
+}
+
 .creator .Unclosed,
 .creator .invalidIndent,
 .creator .invalidLink {
